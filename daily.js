@@ -1,12 +1,13 @@
-//Write a program that takes two numbers and prints their sum.
+//day 2
+//Write a program that checks if a given number is even or odd.
 
+// let a = Number(prompt("enter a number:"));
 let a = 10;
-let b = 20;
+if (a % 2 == 0) {
+  console.log("number is even");
+} else {
+  console.log("number is odd");
+}
 
-// function add(a, b) {
-//   return a + b;
-// }
-// console.log(add(a, b));
-
-const add = (a, b) => a + b;
-console.log(add(a, b));
+// ternary opp
+// console.log(a % 2 == 0 ? "even" : "odd");

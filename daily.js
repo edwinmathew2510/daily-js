@@ -1,13 +1,33 @@
-//day 2
-//Write a program that checks if a given number is even or odd.
+//day 2=3
+//Write a program that takes two numbers and an operator (+, -, *, /) as input, then performs the calculation.
 
-// let a = Number(prompt("enter a number:"));
-let a = 10;
-if (a % 2 == 0) {
-  console.log("number is even");
-} else {
-  console.log("number is odd");
+let num1 = 40;
+let num2 = 20;
+let operator = "*";
+
+// b = eval(num1 + operator + num2);
+// console.log(b);
+
+let result;
+switch (operator) {
+  case "+":
+    result = num1 + num2;
+    break;
+
+  case "-":
+    result = num1 - num2;
+    break;
+
+  case "/":
+    result = num1 / num2;
+    break;
+
+  case "*":
+    result = num1 * num2;
+    break;
+
+  default:
+    result = "invalid operator";
 }
 
-// ternary opp
-// console.log(a % 2 == 0 ? "even" : "odd");
+console.log(result);

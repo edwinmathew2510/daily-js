@@ -1,33 +1,20 @@
-//day 2=3
-//Write a program that takes two numbers and an operator (+, -, *, /) as input, then performs the calculation.
+// day 4
 
-let num1 = 40;
-let num2 = 20;
-let operator = "*";
+//Write a program to find the factorial of a number using a for loop.
 
-// b = eval(num1 + operator + num2);
-// console.log(b);
+let number = 5;
+let result = 1;
 
-let result;
-switch (operator) {
-  case "+":
-    result = num1 + num2;
-    break;
+// for (let i = 1; i <= 5; i++) {
+//   result = i * result;
+// }
+// console.log(result);
 
-  case "-":
-    result = num1 - num2;
-    break;
-
-  case "/":
-    result = num1 / num2;
-    break;
-
-  case "*":
-    result = num1 * num2;
-    break;
-
-  default:
-    result = "invalid operator";
+if (number < 0) {
+  console.log("factorial is not defined by negative numbers");
+} else {
+  for (let i = 1; i <= number; i++) {
+    result *= i;
+  }
 }
-
-console.log(result);
+console.log(`Factoral of number ${number} is : ${result}`);

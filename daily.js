@@ -1,20 +1,19 @@
-// day 4
+// day 5
 
-//Write a program to find the factorial of a number using a for loop.
+//Write a program that takes a number and reverses its digits.
 
-let number = 5;
-let result = 1;
+let num = 12345;
+let str = String(num);
 
-// for (let i = 1; i <= 5; i++) {
-//   result = i * result;
-// }
-// console.log(result);
+// method 1
+let result = str.split("").reverse().join("");
+console.log(Number(result));
 
-if (number < 0) {
-  console.log("factorial is not defined by negative numbers");
-} else {
-  for (let i = 1; i <= number; i++) {
-    result *= i;
-  }
+// method 2
+
+let reversed = [];
+
+for (let i = str.length - 1; i >= 0; i--) {
+  reversed += str[i];
 }
-console.log(`Factoral of number ${number} is : ${result}`);
+console.log(Number(reversed));

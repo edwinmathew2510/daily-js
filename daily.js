@@ -1,19 +1,12 @@
-// day 5
+// day 6
 
-//Write a program that takes a number and reverses its digits.
+// A number is a palindrome if it reads the same forwards and backwards.
 
-let num = 12345;
-let str = String(num);
+let num = "121";
+let newStr = String(num).split("").reverse().join("");
 
-// method 1
-let result = str.split("").reverse().join("");
-console.log(Number(result));
-
-// method 2
-
-let reversed = [];
-
-for (let i = str.length - 1; i >= 0; i--) {
-  reversed += str[i];
+if (num === newStr) {
+  console.log("its a palindrome");
+} else {
+  console.log("not a palindrome");
 }
-console.log(Number(reversed));

@@ -1,12 +1,10 @@
-// day 6
+// day 7 got lost and came back again
 
-// A number is a palindrome if it reads the same forwards and backwards.
+//JS program that counts how many digits are in a number.
 
-let num = "121";
-let newStr = String(num).split("").reverse().join("");
+let num = 234567654565456;
+let count = 0;
 
-if (num === newStr) {
-  console.log("its a palindrome");
-} else {
-  console.log("not a palindrome");
-}
+let STR = String(num).length;
+
+console.log("number of dights :", STR);

@@ -1,7 +1,9 @@
-// day 8
-// Find Maximum and Minimum in an Array
+// day 9
+// Reverse an Array (without using .reverse())
 
-let input = [10, 25, 3, 47, 19];
-input.sort((a, b) => a - b);
-
-console.log(`Minimum:${input[0]} , Maximum:${input[input.length - 1]}`);
+let arr = [1, 2, 3, 4, 5];
+let output = [];
+for (let i = arr.length - 1; i >= 0; i--) {
+  output.push(arr[i]);
+}
+console.log(output);

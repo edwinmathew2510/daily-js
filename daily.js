@@ -1,15 +1,12 @@
-// day 11
-// JavaScript program to count how many vowels (a, e, i, o, u) are in a given string.
+// day 12
+// JavaScript program to find the largest number in an array manually — no built-in methods like Math.max() or .sort().
 
-let str = "JavaScript is awesome";
+let arr = [45, 12, 78, 34, 89, 23];
 
-let lowerCaseStr = str.toLowerCase().replace(/\s/g, "").split("");
-
-let count = 0;
-
-for (let i = 0; i < lowerCaseStr.length; i++) {
-  if ("aeiou".includes(lowerCaseStr[i])) {
-    count = count + 1;
+let value = arr[0];
+for (let i = 0; i < arr.length; i++) {
+  if (value < arr[i]) {
+    value = arr[i];
   }
 }
-console.log(`There ${count === 1 ? "is" : "are"} ${count} vowels.`);
+console.log("largest number is: " + value);

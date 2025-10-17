@@ -1,12 +1,18 @@
-// day 12
-// JavaScript program to find the largest number in an array manually — no built-in methods like Math.max() or .sort().
+// day 13
+//Count Consonants in a String
 
-let arr = [45, 12, 78, 34, 89, 23];
+let str = "JavaScript is awesome;";
+let count = 0;
+let newStr = str.toLowerCase().replace(/\s/g, "").split("");
 
-let value = arr[0];
-for (let i = 0; i < arr.length; i++) {
-  if (value < arr[i]) {
-    value = arr[i];
+if (newStr == 0) {
+  console.log("no words");
+} else {
+  for (let i = 0; i < newStr.length; i++) {
+    let char = newStr[i];
+    if (char >= "a" && char <= "z" && !"aeiou".includes(char)) {
+      count++;
+    }
   }
 }
-console.log("largest number is: " + value);
+console.log("count is :" + count);

@@ -1,18 +1,12 @@
-// day 13
-//Count Consonants in a String
+// day 14
 
-let str = "JavaScript is awesome;";
-let count = 0;
-let newStr = str.toLowerCase().replace(/\s/g, "").split("");
+//javaScript program that checks whether a given array is sorted in ascending order or not.
 
-if (newStr == 0) {
-  console.log("no words");
-} else {
-  for (let i = 0; i < newStr.length; i++) {
-    let char = newStr[i];
-    if (char >= "a" && char <= "z" && !"aeiou".includes(char)) {
-      count++;
-    }
-  }
-}
-console.log("count is :" + count);
+let arr = [10, 50, 30, 40, 20];
+
+let str = String(arr);
+let newArr = String(arr.sort());
+
+console.log(
+  `The array is${newArr == str ? " " : " NOT "}sorted in ascending order.`
+);

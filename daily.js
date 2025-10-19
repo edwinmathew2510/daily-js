@@ -1,12 +1,30 @@
-// day 14
+// Day 15
+// Problem: Find the Second Largest Number in an Array
 
-//javaScript program that checks whether a given array is sorted in ascending order or not.
-
-let arr = [10, 50, 30, 40, 20];
-
-let str = String(arr);
-let newArr = String(arr.sort());
-
-console.log(
-  `The array is${newArr == str ? " " : " NOT "}sorted in ascending order.`
-);
+function bubbleSort(arr) {
+  let n = arr.length;
+  //check weather all numbers are same
+  if (arr.every((num) => num == arr[0])) {
+    return "all numbers are equal";
+  }
+  // sorting array manualy
+  for (let i = 0; i < n - 1; i++) {
+    for (let j = 0; j < n - 1 - i; j++) {
+      if (arr[j] > arr[j + 1]) {
+        let temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+      }
+    }
+  }
+  //finding second last number is last number has dupilcates
+  let secondLastNum;
+  for (let i = arr.length - 1; i > 0; i--) {
+    if (arr[i - 1] != arr[i]) {
+      return "The second largest number is " + (secondLastNum = arr[i - 1]);
+    }
+  }
+}
+let array = [10, 25, 50, 70, 70, 70];
+let result = bubbleSort(array);
+console.log(result);

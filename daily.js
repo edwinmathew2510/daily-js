@@ -1,30 +1,13 @@
-// Day 15
-// Problem: Find the Second Largest Number in an Array
+// day 16
+// Problem: Check if a Number is Prime
 
-function bubbleSort(arr) {
-  let n = arr.length;
-  //check weather all numbers are same
-  if (arr.every((num) => num == arr[0])) {
-    return "all numbers are equal";
+function isPrime(num) {
+  if (num < 2 || !Number.isInteger(num)) return false;
+
+  for (let i = 2; i < Math.sqrt(num); i++) {
+    if (num % i == 0) return false;
   }
-  // sorting array manualy
-  for (let i = 0; i < n - 1; i++) {
-    for (let j = 0; j < n - 1 - i; j++) {
-      if (arr[j] > arr[j + 1]) {
-        let temp = arr[j];
-        arr[j] = arr[j + 1];
-        arr[j + 1] = temp;
-      }
-    }
-  }
-  //finding second last number is last number has dupilcates
-  let secondLastNum;
-  for (let i = arr.length - 1; i > 0; i--) {
-    if (arr[i - 1] != arr[i]) {
-      return "The second largest number is " + (secondLastNum = arr[i - 1]);
-    }
-  }
+  return true;
 }
-let array = [10, 25, 50, 70, 70, 70];
-let result = bubbleSort(array);
-console.log(result);
+const num = 29;
+console.log(`${num} is${isPrime(num) ? " " : " not "} prime number`);

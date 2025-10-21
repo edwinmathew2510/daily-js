@@ -1,13 +1,11 @@
-// day 16
-// Problem: Check if a Number is Prime
+// 🧩 Day 17 — Problem: Check if Two Strings are Anagrams
 
-function isPrime(num) {
-  if (num < 2 || !Number.isInteger(num)) return false;
+function Anagrams(str1, str2) {
+  if (str1.length !== str2.length) return false;
+  str1 = str1.replace(/\s/g, "").toLowerCase();
+  str2 = str2.replace(/\s/g, "").toLowerCase();
 
-  for (let i = 2; i < Math.sqrt(num); i++) {
-    if (num % i == 0) return false;
-  }
-  return true;
+  return str1.split("").sort().join("") === str2.split("").sort().join("");
 }
-const num = 29;
-console.log(`${num} is${isPrime(num) ? " " : " not "} prime number`);
+let result = Anagrams("listen", "silent");
+console.log(result);

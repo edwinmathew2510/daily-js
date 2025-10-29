@@ -1,11 +1,15 @@
-function createCounter(){
-  let value =0
-  function increment(){
-   return ++value
-  }
-  return {increment}
-}
-let counter1=createCounter()
-let counter2=createCounter()
-console.log(counter1.increment())
-console.log(counter1.increment())
+// day 20,To Be Or Not To Be
+let expect = function (val) {
+  return {
+    toBe: function (v) {
+      if (val === v) return true;
+      else throw new Error("Not Equal");
+    },
+    notToBe: function (v) {
+      if (val !== v) return true;
+      else throw new Error("Equal");
+    },
+  };
+};
+
+console.log(expect(5).toBe(5));

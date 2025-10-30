@@ -1,15 +1,21 @@
-// day 20,To Be Or Not To Be
-let expect = function (val) {
+// day 21 ,2665. Counter II
+
+let createCounter = function (init) {
+  let count = init;
+  let increment = () => ++count;
+  let decrement = () => --count;
+  let reset = () => {
+    count = init;
+    return count;
+  };
   return {
-    toBe: function (v) {
-      if (val === v) return true;
-      else throw new Error("Not Equal");
-    },
-    notToBe: function (v) {
-      if (val !== v) return true;
-      else throw new Error("Equal");
-    },
+    increment: increment,
+    decrement: decrement,
+    reset: reset,
   };
 };
 
-console.log(expect(5).toBe(5));
+// const counter = createCounter(5);
+// counter.increment(); // 6
+// counter.reset(); // 5
+// counter.decrement(); // 4

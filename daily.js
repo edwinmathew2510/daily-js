@@ -1,21 +1,17 @@
-// day 21 ,2665. Counter II
+// day 22 ,2635. Apply Transform Over Each Element in Array
 
-let createCounter = function (init) {
-  let count = init;
-  let increment = () => ++count;
-  let decrement = () => --count;
-  let reset = () => {
-    count = init;
-    return count;
-  };
-  return {
-    increment: increment,
-    decrement: decrement,
-    reset: reset,
-  };
+const map = function (array, fn) {
+  const result = [];
+  for (let i = 0; i < array.length; i++) {
+    result.push(fn(array[i], i));
+  }
+  return result;
 };
-
-// const counter = createCounter(5);
-// counter.increment(); // 6
-// counter.reset(); // 5
-// counter.decrement(); // 4
+/////////
+let arr = [1, 2, 3];
+/////////
+function plusI(n, i) {
+  return n + i;
+}
+/////////
+console.log(map(arr, plusI));

@@ -1,17 +1,16 @@
-// day 22 ,2635. Apply Transform Over Each Element in Array
-
-const map = function (array, fn) {
+// day 23 ,2634. Filter Elements from Array
+const filter = function (array, fn) {
   const result = [];
   for (let i = 0; i < array.length; i++) {
-    result.push(fn(array[i], i));
+    if (fn(array[i], i)) result.push(array[i]);
   }
   return result;
 };
-/////////
-let arr = [1, 2, 3];
-/////////
-function plusI(n, i) {
-  return n + i;
+///////
+function greaterThan10(n) {
+  return n > 10;
 }
-/////////
-console.log(map(arr, plusI));
+///////
+let arr = [0, 10, 20, 30];
+////////
+console.log(filter(arr, greaterThan10));

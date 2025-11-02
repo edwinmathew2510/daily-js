@@ -1,16 +1,13 @@
-// day 23 ,2634. Filter Elements from Array
-const filter = function (array, fn) {
-  const result = [];
-  for (let i = 0; i < array.length; i++) {
-    if (fn(array[i], i)) result.push(array[i]);
+// day 24 ,2626. Array Reduce Transformation
+const reduce = function (num, fn, init) {
+  let res = init;
+  for (n of num) {
+    res = fn(res, n);
   }
-  return result;
+  return res;
 };
-///////
-function greaterThan10(n) {
-  return n > 10;
+let arr = [1, 2, 3, 4];
+function sum(accum, curr) {
+  return accum + curr;
 }
-///////
-let arr = [0, 10, 20, 30];
-////////
-console.log(filter(arr, greaterThan10));
+console.log(reduce(arr, sum, 0));

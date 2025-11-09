@@ -1,5 +1,16 @@
-// day 25 ,2703. Return Length of Arguments Passed
-const argumentsLength = function (...args) {
-  return args.length;
-};
-console.log(argumentsLength([{}, null, "3"]));
+// day 26,2666. Allow One Function Call
+
+function once(fn, ...args) {
+  let count = 0;
+  return function (args) {
+    count++;
+    if (count == 2) return undefined;
+    return fn(args);
+  };
+}
+let fn = (a, b, c) => a + b + c;
+let arr = [
+  [1, 2, 3],
+  [2, 3, 6],
+];
+once(fn, arr);

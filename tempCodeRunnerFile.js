@@ -1,1 +1,2 @@
-  // console.log(data);
+b = b.flat();
+// console.log(b);

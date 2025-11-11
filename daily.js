@@ -1,16 +1,12 @@
-// day 26,2666. Allow One Function Call
+// day 27,2723. Add Two Promises
 
-function once(fn, ...args) {
-  let count = 0;
-  return function (args) {
-    count++;
-    if (count == 2) return undefined;
-    return fn(args);
-  };
-}
-let fn = (a, b, c) => a + b + c;
-let arr = [
-  [1, 2, 3],
-  [2, 3, 6],
-];
-once(fn, arr);
+addTwoPromises = async function (promise1, promise2) {
+  let prm1 = await promise1;
+  let prm2 = await promise2;
+
+  return prm1 + prm2;
+};
+
+let p1 = new Promise((resolve) => setTimeout(() => resolve(10), 50));
+let p2 = new Promise((resolve) => setTimeout(() => resolve(-12), 30));
+addTwoPromises(p1, p2).then(console.log);

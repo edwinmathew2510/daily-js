@@ -1,8 +1,7 @@
-// day 28,2621. Sleep
-
-async function sleep(millis) {
-  return new Promise((resolve) => setTimeout(resolve, millis));
-}
-
-let t = Date.now();
-sleep(2000).then(() => console.log(Date.now() - t)); // 100
+//day 29,2715. Timeout Cancellation
+var cancellable = function (fn, args, t) {
+  let timer = setTimeout(() => {
+    fn(...args);
+  }, t);
+  return (cancelFn = () => clearTimeout(timer));
+};

@@ -1,2 +1,4 @@
-b = b.flat();
-// console.log(b);
+function hey() {
+  console.log(this);
+}
+hey();

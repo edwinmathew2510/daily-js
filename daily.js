@@ -1,16 +1,12 @@
-// day 29 /2725. Interval Cancellation
-let cancellable = function (fn, args, t) {
-  fn(...args);
+// day 30,2627. Debounce
 
-  const id = setInterval(() => {
-    fn(...args);
-  }, t);
-
-  return function cancelFn() {
-    clearInterval(id);
+function debounce(fn, t) {
+  let timer = null;
+  return function (...args) {
+    if (timer != null) clearTimeout(timer);
+    timer = setTimeout(() => fn(...args), t);
   };
-};
-
-const cancelTimeMs = 190;
-const cancelFn = cancellable((x) => x * 2, [4], 35);
-setTimeout(cancelFn, cancelTimeMs);
+}
+debounce(console.log(), 2000);
+debounce(console.log(), 2000);
+debounce(console.log(), 2000);

@@ -1,12 +1,20 @@
-// day 30,2627. Debounce
-
-function debounce(fn, t) {
-  let timer = null;
-  return function (...args) {
-    if (timer != null) clearTimeout(timer);
-    timer = setTimeout(() => fn(...args), t);
-  };
+// day 31,2721. Execute Asynchronous Functions in Parallel
+function promiseAll(functions) {
+  return new Promise(async (res, rej) => {
+    let len = functions.length;
+    let count = 0;
+    let ans = new Array(len);
+    functions.forEach(async (fun, index) => {
+      try {
+        let val = await fun();
+        ans[index] = val;
+        count++;
+        if (count === len) res(ans);
+      } catch (err) {
+        rej(err);
+      }
+    });
+  });
 }
-debounce(console.log(), 2000);
-debounce(console.log(), 2000);
-debounce(console.log(), 2000);
+const promise = promiseAll([() => new Promise((res) => res(42))]);
+promise.then(console.log); // [42]

@@ -1,4 +1,4 @@
-function hey() {
-  console.log(this);
-}
-hey();
+  // *[Symbol.iterator]() {
+  //   yield this.name;
+  //   yield this.age;
+  // },

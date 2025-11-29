@@ -1,9 +1,9 @@
-// day 31,2727. Is Object Empty
-const isEmpty = function(obj) {
-if(Array.isArray(obj))return obj.length===0
-let arr=Object.keys(obj)
-return arr.length===0
-};
-
-console.log(isEmpty([null, false, 0]))
-console.log(isEmpty({}))
+// day 32,2677. Chunk Array
+function chunk(arr,size){
+    let res=[]
+    for(let i =0;i<arr.length;i+=size){
+        res.push(arr.slice(i,i+size))
+    }
+    return res
+}
+console.log(chunk([1,2,3,4],2));

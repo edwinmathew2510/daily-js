@@ -1,9 +1,9 @@
-// day 32,2677. Chunk Array
-function chunk(arr,size){
-    let res=[]
-    for(let i =0;i<arr.length;i+=size){
-        res.push(arr.slice(i,i+size))
-    }
-    return res
+// day 33 ,2619. Array Prototype Last
+
+Array.prototype.log=function(){
+    if(this.length)return this.pop()
+    return -1
 }
-console.log(chunk([1,2,3,4],2));
+
+ const arr = [1, 2, 3];
+console.log( arr.log()) // 3

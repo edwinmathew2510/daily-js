@@ -1,17 +1,7 @@
-// day34 ,2631. Group By
+// day 35 , 2724. Sort By
 
-Array.prototype.groupBy = function(fn) {
-  const result = {};
-
-  for (const item of this) {
-    const key = fn(item); // must return a string
-
-    if (!result[key]) {
-      result[key] = [];
-    }
-
-    result[key].push(item);
-  }
-
-  return result;
-};
+function sortby(fn,arr){
+    return arr.sort((a,b)=>fn(a)-fn(b))
+}
+let s=sortby((x) => x,[5,4,1,2,3])
+console.log(s)

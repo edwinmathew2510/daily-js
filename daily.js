@@ -1,30 +1,9 @@
-//day 36,2722. Join Two Arrays by ID
+// day 36/2625. Flatten Deeply Nested Array
 
-function sortedArr(arr1,arr2){
 
-    let map= new Map()
-
-    for(const obj of arr1){
-        map.set(obj.id,{...obj})
-    }
-    for(const obj of arr2){
-        if(map.has(obj.id)){
-            map.set(obj.id,{...map.get(obj.id),...obj})
-        }
-        else{
-            map.set(obj.id,{...obj})
-        }
-    }
-    return Array.from(map.values()).sort((a,b)=>a.id-b.id)
+function flat(arr,n){
+    return arr.flat(n)
 }
 
-
-
-let res=sortedArr([
-  { id: 1, x: 2 },
-  { id: 2, x: 9 }
-],[
-  { id: 1, x: 2 },
-  { id: 3, x: 9 }
-])
-console.log(res)
+let res=flat([1,2,3,[4,5,6],[7,8,[9,10,11],12],[13,14,15]],2)
+console.log(res);

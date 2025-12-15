@@ -1,9 +1,25 @@
-// day 36/2625. Flatten Deeply Nested Array
+//day 37,2705. Compact Object
 
 
-function flat(arr,n){
-    return arr.flat(n)
+function checkObject(obj){
+    if(!obj)return obj;
+    else if(typeof obj!=="object")return obj;
+
+    if(Array.isArray(obj)){
+        let clone =[];
+        for(let item of obj){
+            if(item)clone.push(checkObject(item))
+        }
+    return clone;
+    }
+    else{
+        for(let key of Object.keys(obj)){
+            if(!obj[key])delete obj[key];
+            obj[key]=checkObject(obj[key])
+        }
+        return obj;
+    }
 }
 
-let res=flat([1,2,3,[4,5,6],[7,8,[9,10,11],12],[13,14,15]],2)
-console.log(res);
+let o1=[0,1,null]
+console.log(checkObject(o1))
